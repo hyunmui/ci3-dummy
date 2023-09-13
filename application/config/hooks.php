@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') || exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -11,3 +12,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	https://codeigniter.com/userguide3/general/hooks.html
 |
 */
+
+$hook = [
+    'pre_system' => [
+        [
+            'class'    => 'PreSystem',
+            'function' => 'load',
+            'filename' => 'PreSystem.php',
+            'filepath' => 'hooks',
+            'params'   => ['envDir' => FCPATH]
+        ]
+    ],
+    'cache_override' => [],
+    'pre_controller' => [],
+    'post_controller_constructor' => [],
+    'post_controller' => [],
+    'post_system' => [],
+];

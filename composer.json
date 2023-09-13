@@ -5,26 +5,46 @@
     "homepage": "https://codeigniter.com",
     "license": "MIT",
     "require": {
-        "php": ">=5.3.7"
+        "php": ">=5.3.7",
+        "twig/twig": "^3.7",
+        "symfony/dependency-injection": "^6.3",
+        "symfony/config": "^6.3",
+        "vlucas/phpdotenv": "^5.5"
     },
     "suggest": {
         "paragonie/random_compat": "Provides better randomness in PHP 5.x"
     },
     "scripts": {
+        "cghooks": "vendor/bin/cghooks",
         "test:coverage": [
             "@putenv XDEBUG_MODE=coverage",
             "phpunit --color=always --coverage-text --configuration tests/travis/sqlite.phpunit.xml"
         ],
         "post-install-cmd": [
+            "cghooks add --ignore-lock",
             "sed -i s/name{0}/name[0]/ vendor/mikey179/vfsstream/src/main/php/org/bovigo/vfs/vfsStream.php"
         ],
         "post-update-cmd": [
+            "cghooks update",
             "sed -i s/name{0}/name[0]/ vendor/mikey179/vfsstream/src/main/php/org/bovigo/vfs/vfsStream.php"
         ]
+    },
+    "config": {
+        "platform": {
+            "php": "8.1"
+        }
     },
     "require-dev": {
         "mikey179/vfsstream": "1.6.*",
         "phpunit/phpunit": "4.* || 5.* || 9.*",
-        "friendsofphp/php-cs-fixer": "^3.26"
+        "friendsofphp/php-cs-fixer": "^3.26",
+        "brainmaestro/composer-git-hooks": "^2.8"
+    },
+    "extra": {
+        "hooks": {
+            "post-merge": [
+                "composer install"
+            ]
+        }
     }
 }
