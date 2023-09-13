@@ -20,11 +20,18 @@ $hook = [
             'function' => 'load',
             'filename' => 'PreSystem.php',
             'filepath' => 'hooks',
-            'params'   => ['envDir' => FCPATH]
+            'params'   => ['envDir' => FCPATH],
         ]
     ],
     'cache_override' => [],
-    'pre_controller' => [],
+    'pre_controller' => [
+        [
+            'class'    => 'PreController',
+            'function' => 'load',
+            'filename' => 'PreController.php',
+            'filepath' => 'hooks',
+        ]
+    ],
     'post_controller_constructor' => [],
     'post_controller' => [],
     'post_system' => [],
