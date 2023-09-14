@@ -6,7 +6,7 @@ defined('BASEPATH') || exit('No direct script access allowed');
 
 <head>
     <meta charset="utf-8">
-    <title>Welcome to CodeIgniter</title>
+    <title>코드이그나이터에 오신 것을 환영합니다</title>
 
     <style type="text/css">
         ::selection {
@@ -88,21 +88,21 @@ defined('BASEPATH') || exit('No direct script access allowed');
 <body>
 
     <div id="container">
-        <h1>Welcome to CodeIgniter!</h1>
+        <h1>CodeIgniter에 오신 것을 환영합니다!</h1>
 
         <div id="body">
-            <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+            <p>당신이 보고 있는 페이지는 CodeIgniter에 의해 동적으로 생성되고 있습니다.</p>
 
-            <p>If you would like to edit this page you'll find it located at:</p>
+            <p>이 페이지를 편집하려면 다음 위치에서 찾을 수 있습니다.</p>
             <code>application/views/welcome_message.php</code>
 
-            <p>The corresponding controller for this page is found at:</p>
-            <code>application/controllers/Welcome.php</code>
+            <p>이 페이지에 해당하는 컨트롤러는 다음 위치에서 찾을 수 있습니다.</p>
+            <code>application/controllers/WelcomeController.php</code>
 
-            <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="userguide3/">User Guide</a>.</p>
+            <p>CodeIgniter를 처음으로 탐색하는 경우 <a href="http://www.ciboard.co.kr/user_guide/kr/">사용자 가이드</a>를 먼저 읽어야 합니다.</p>
         </div>
 
-        <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : ''; ?></p>
+        <p class="footer"><strong>{elapsed_time}</strong>초 만에 페이지가 렌더링되었습니다. CodeIgniter 버전 <strong><?= CI_VERSION ?><strong></p>
     </div>
 
 </body>

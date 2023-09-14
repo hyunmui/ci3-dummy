@@ -30,6 +30,7 @@ $hook = [
             'function' => 'load',
             'filename' => 'PreController.php',
             'filepath' => 'hooks',
+            'params'   => [],
         ]
     ],
     'post_controller_constructor' => [],

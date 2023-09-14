@@ -1,8 +1,12 @@
 <?php
 
+use App\Service\MessageGenerator;
+use App\Service\TwitterClient;
+use App\Util\Rot13Transformer;
+
 defined('BASEPATH') || exit('No direct script access allowed');
 
-class WelcomeController extends CI_Controller
+class WelcomeController extends Messe_Controller
 {
     /**
      * Index Page for this controller.
@@ -27,6 +31,13 @@ class WelcomeController extends CI_Controller
 
     public function test_mode(): void
     {
-        echo 1234;
+        $object = $this->fromContainer(MessageGenerator::class);
+        // $object = $this->fromContainer('message_generator');
+        dump($object);
+    }
+
+    public function test(): void
+    {
+        dump($this->fromContainer(Rot13Transformer::class));
     }
 }
